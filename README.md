@@ -7,7 +7,7 @@ jQuery
 
 
 ### Examples
-You can check our examples in our product page by [clicking here](http://bway.pt/opensource/plugins/js/bway-image-slider){:target="_blank"}.
+You can check our examples in our product page by [clicking here](http://bway.pt/opensource/plugins/js/bway-image-slider).
 
 
 ### Setup...
