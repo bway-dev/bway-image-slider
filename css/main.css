@@ -345,6 +345,13 @@ footer {
 
 
 
+@media (max-width:767px) {
+  .examples pre {
+    margin: 30px 15px;
+  }
+}
+
+
 
 
 
