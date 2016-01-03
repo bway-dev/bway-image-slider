@@ -1,0 +1,274 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang=""> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>BWAY Image Slider jQuery Plugin</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+
+        <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="css/main.css">
+
+    </head>
+    <body>
+        <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+      <div class="container">
+
+        <div class="logo"><img src="imgs/logo.png" /></div>
+
+        <h1>Bway Image Slider <span>[jQuery plugin]</span></h1>
+        <h4>Allows vertical and horizontal axis usage</h4>
+        <p>Nice jQuery image slider with option for Horizontal or Vertical axis, with or without infinite loop.</p>
+
+        <h2>Download</h2>
+        <p>you can Download</p>
+
+        <h2>Setup...</h2>
+        <h4>Load jQuery and include bway-image-slider plugin</h4>
+        <pre>&lt;script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"&gt;&lt;/script&gt;
+&lt;script src="jquery.bway.imageslider.js"&gt;&lt;/script&gt;</pre>
+        <br />
+
+        <h4>Place your HTML markup</h4>
+        <pre>&lt;div id="your-gallery"&gt;
+  &lt;div class="viewport"&gt;
+    &lt;input type="button" class="buttons prev" value="&lt;"&gt;
+    &lt;ul class="overview"&gt;
+      &lt;li&gt;&lt;img src="path-to-your-image"&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;img src="path-to-your-image"&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;img src="path-to-your-image"&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;img src="path-to-your-image"&gt;&lt;/li&gt;
+    &lt;/ul>
+    &lt;input type="button" class="buttons next" value="&gt;"&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</pre>
+        <br />
+
+        <h4>Initialization</h4>
+        <p>Simple initialization</p>
+        <pre>$('#your-gallery').bwayImageSlider();</pre>
+        <br />
+        <p>initializing with some options</p>
+        <pre>$('#your-gallery').bwayImageSlider({
+  axis       : 'y',  // default 'x'
+  itemMargin : 14,   // margin between items, default 10
+  speed      : 500,  // miliseconds, default 1500
+  loop       : true
+});</pre>
+        <br />
+
+        <h2>Examples</h2>
+        <p>Below you can find an example of the plugin in vertical and horizontal axis, both with the possibility of infinite loop.</p>
+
+        <div class="examples container">
+          
+          <h4>HORIZONTAL (no loop)</h4>
+          
+          <div class="col-xs-12 col-sm-12 col-md-12 sample" id="example1">
+            <div class="viewport">
+              <input type="button" class="buttons prev" value="">
+              <div class="overview">
+                <ul>
+                  <li><img src="http://lorempixel.com/220/150/people/1"></li>
+                  <li><img src="http://lorempixel.com/220/150/people/2"></li>
+                  <li><img src="http://lorempixel.com/220/150/people/3"></li>
+                  <li><img src="http://lorempixel.com/220/150/people/4"></li>
+                  <li><img src="http://lorempixel.com/220/150/people/5"></li>
+                  <li><img src="http://lorempixel.com/220/150/people/6"></li>
+                  <li><img src="http://lorempixel.com/220/150/people/7"></li>
+                  <li><img src="http://lorempixel.com/220/150/people/8"></li>
+                  <li><img src="http://lorempixel.com/220/150/people/9"></li>
+                </ul>
+              </div>
+              <input type="button" class="buttons next" value="">
+            </div>
+            <pre>$('#example1').bwayImageSlider({
+  axis       : 'x',
+  itemMargin : 14,
+  speed      : 500,
+  loop       : false
+});</pre>
+          </div>
+
+
+          <h4>HORIZONTAL + INFINITE LOOP</h4>
+
+          <div class="col-xs-12 col-sm-12 col-md-12 sample" id="example2">
+            <div class="viewport">
+              <input type="button" class="buttons prev" value="">
+              <div class="overview">
+                <ul>
+                  <li><img src="http://lorempixel.com/220/150/people/1"></li>
+                  <li><img src="http://lorempixel.com/220/150/people/2"></li>
+                  <li><img src="http://lorempixel.com/220/150/people/3"></li>
+                  <li><img src="http://lorempixel.com/220/150/people/4"></li>
+                  <li><img src="http://lorempixel.com/220/150/people/5"></li>
+                  <li><img src="http://lorempixel.com/220/150/people/6"></li>
+                  <li><img src="http://lorempixel.com/220/150/people/7"></li>
+                  <li><img src="http://lorempixel.com/220/150/people/8"></li>
+                  <li><img src="http://lorempixel.com/220/150/people/9"></li>
+                </ul>
+              </div>
+              <input type="button" class="buttons next" value="">
+            </div>
+            <pre>$('#example2').bwayImageSlider({
+  axis       : 'x',
+  itemMargin : 14,
+  speed      : 500,
+  loop       : true
+});</pre>
+          </div>
+
+
+          
+
+          <div class="col-xs-12 col-sm-6 col-md-6 sample" id="example3">
+
+            <h4>VERTICAL (no loop)</h4>
+            <div class="viewport">
+              <input type="button" class="buttons prev" value="">
+              <div class="overview">
+                <ul>
+                  <li><img src="http://lorempixel.com/220/150/people/1"></li>
+                  <li><img src="http://lorempixel.com/220/150/people/2"></li>
+                  <li><img src="http://lorempixel.com/220/150/people/3"></li>
+                  <li><img src="http://lorempixel.com/220/150/people/4"></li>
+                  <li><img src="http://lorempixel.com/220/150/people/5"></li>
+                  <li><img src="http://lorempixel.com/220/150/people/6"></li>
+                  <li><img src="http://lorempixel.com/220/150/people/7"></li>
+                  <li><img src="http://lorempixel.com/220/150/people/8"></li>
+                  <li><img src="http://lorempixel.com/220/150/people/9"></li>
+                </ul>
+              </div>
+              <input type="button" class="buttons next" value="">
+            </div>
+            <pre>$('#example3').bwayImageSlider({
+  axis       : 'y',
+  itemMargin : 14,
+  speed      : 500,
+  loop       : false
+});</pre>
+          </div>
+
+          
+
+          <div class="col-xs-12 col-sm-6 col-md-6 sample" id="example4">
+
+            <h4>VERTICAL + INFINITE LOOP</h4>
+            <div class="viewport">
+              <input type="button" class="buttons prev" value="">
+              <div class="overview">
+                <ul>
+                  <li><img src="http://lorempixel.com/220/150/people/1"></li>
+                  <li><img src="http://lorempixel.com/220/150/people/2"></li>
+                  <li><img src="http://lorempixel.com/220/150/people/3"></li>
+                  <li><img src="http://lorempixel.com/220/150/people/4"></li>
+                  <li><img src="http://lorempixel.com/220/150/people/5"></li>
+                  <li><img src="http://lorempixel.com/220/150/people/6"></li>
+                  <li><img src="http://lorempixel.com/220/150/people/7"></li>
+                  <li><img src="http://lorempixel.com/220/150/people/8"></li>
+                  <li><img src="http://lorempixel.com/220/150/people/9"></li>
+                </ul>
+              </div>
+              <input type="button" class="buttons next" value="">
+            </div>
+            <pre>$('#example4').bwayImageSlider({
+  axis       : 'y',
+  itemMargin : 14,
+  speed      : 500,
+  loop       : true
+});</pre>
+          </div>
+
+        </div>
+
+
+        <h2>License</h2>
+        <p>The JavaScript code in this page is free software: you can
+        redistribute it and/or modify it under the terms of the GNU
+        General Public License (GNU GPL) as published by the Free Software
+        Foundation, either version 3 of the License, or (at your option)
+        any later version.  The code is distributed WITHOUT ANY WARRANTY;
+        without even the implied warranty of MERCHANTABILITY or FITNESS
+        FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.</p>
+
+        <p>As additional permission under GNU GPL version 3 section 7, you
+        may distribute non-source (e.g., minimized or compacted) forms of
+        that code without the copy of the GNU GPL normally required by
+        section 4, provided you include this license notice and a URL
+        through which recipients can access the Corresponding Source.</p>
+
+
+        <h2>Contribute</h2>
+        <p>If you find this plugin useful, you can donate on the link below. Thank you.</p>
+
+        <div class="col-xs-12 col-md-12">
+          <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+          <input type="hidden" name="cmd" value="_s-xclick">
+          <input type="hidden" name="hosted_button_id" value="NNQLM9BMWFTW8">
+          <input type="image" src="https://www.paypalobjects.com/en_US/GB/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal – The safer, easier way to pay online.">
+          <img alt="" border="0" src="https://www.paypalobjects.com/pt_PT/i/scr/pixel.gif" width="1" height="1">
+          </form>
+        </div>
+
+      </div>
+
+
+
+
+      <footer class="container-fluid">
+        <p>&copy; Bway 2016 - All rights reserved</p>
+      </footer>
+    </div> <!-- /container -->        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
+
+        <script src="js/vendor/bootstrap.min.js"></script>
+        <script src="js/jquery.bway.imageslider.min.js"></script>
+        
+        <script type="text/javascript">
+          $(document).on('ready', function(){
+            $('#example1').bwayImageSlider({
+              axis       : 'x',  // default 'x'
+              itemMargin : 14,   // margin between items, default 10
+              speed      : 500   // miliseconds, default 1500
+            });
+
+            $('#example2').bwayImageSlider({
+              axis       : 'x',  // default 'x'
+              itemMargin : 14,   // margin between items, default 10
+              speed      : 500,  // miliseconds, default 1500
+              loop       : true
+            });
+
+            $('#example3').bwayImageSlider({
+              axis       : 'y',  // default 'x'
+              itemMargin : 14,   // margin between items, default 10
+              speed      : 500,  // miliseconds, default 1500
+              loop       : false
+            });
+
+            $('#example4').bwayImageSlider({
+              axis       : 'y',  // default 'x'
+              itemMargin : 14,   // margin between items, default 10
+              speed      : 500,  // miliseconds, default 1500
+              loop       : true
+            });
+
+          });
+        </script>
+
+
+
+        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+        
+    </body>
+</html>

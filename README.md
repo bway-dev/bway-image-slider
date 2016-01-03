@@ -68,7 +68,8 @@ The following lines are the css essencial code, all the rest like #your-gallery 
   position: absolute;
   line-height: 25px;
   width: 100%;
-  left: 0; 
+  left: 0; /* if you're using 'y' axis */
+  top: 0;  /* if you're using 'x' axis */
   text-align: center;
   z-index: 1;
   background-color: #FFF;
