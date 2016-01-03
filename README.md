@@ -1,4 +1,4 @@
-# bway-image-slider
+# bway-image-slider v1.0.0
 Nice jQuery image slider with option for Horizontal or Vertical axis.
 
 
