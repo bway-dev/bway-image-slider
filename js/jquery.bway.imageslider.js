@@ -25,11 +25,9 @@
         totalItems = container.find('ul > li').length;
     
     if (nowready==false) {
-      console.log(nowready);
       var elementtoload = carouselListCont.find('li > img'),
           counter = 0;
       function imageLoaded(ref,width) {
-        console.log(ref +' '+width);
         if (ref==totalItems) {
           nowready = true;
           initialize(width);
@@ -43,8 +41,6 @@
     }
 
     function initialize(elwidth) {
-      console.log(nowready);
-
       if (settings.axis=='y') {
         var availableMeasure = (carouselViewport.outerHeight() - prevButton.height() - nextButton.height()),
             itemMeasure = container.find('ul > li:first').height();
@@ -119,7 +115,6 @@
         }
 
         checkProperties();
-        console.log(course);
       });
 
 
