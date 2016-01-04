@@ -57,14 +57,26 @@
       prevButton.on('click', body, function(e){
         e.preventDefault();
 
-        if (settings.loop==true) {
-          deActivateButton(prevButton);
+        prevAction(settings.axis,settings.loop)
+      });
+
+      nextButton.on('click', body, function(e){
+        e.preventDefault();
+
+        nextAction(settings.axis,settings.loop);
+      });
+
+
+      function prevAction(axis,loop) {
+        deActivateButton(prevButton);
+
+        if (loop==true) {
           carouselListCont.prepend(carouselListCont.find('li:last'));
           course = course - settings.initialCourse - itemMeasure - settings.itemMargin;
-          if (settings.axis=='y') { 
+          if (axis=='y') { 
             carouselCont.css('top', course + 'px');
           }
-          if (settings.axis=='x') {
+          if (axis=='x') {
             carouselCont.css('left', course + 'px');
           }
         }
@@ -72,51 +84,54 @@
         course = course + settings.initialCourse + itemMeasure + settings.itemMargin;
         clickTimes = clickTimes - 1;
         
-        if (settings.axis=='y') { 
+        if (axis=='y') { 
           carouselCont.animate({ 'top': course},settings.speed);
         }
-        if (settings.axis=='x') { 
+        if (axis=='x') { 
           carouselCont.animate({ 'left': course},settings.speed);
         }
-        checkProperties();
+        
 
-        if (settings.loop==true) {
-          setTimeout(function () {
-           activateButton(prevButton);
-          },settings.speed+100);
-        }
-      });
 
-      nextButton.on('click', body, function(e){
-        e.preventDefault();
+        setTimeout(function () {
+          activateButton(prevButton);
+          checkProperties();
+        },settings.speed+100);
 
-        if (settings.loop==true) {
-          deActivateButton(nextButton);
+      }
+
+      function nextAction(axis,loop) {
+        deActivateButton(nextButton);
+
+        if (loop==true) {
           setTimeout(function () {
             carouselListCont.append(carouselListCont.find('li:first'));
             course = course + settings.initialCourse + itemMeasure + settings.itemMargin;
-            if (settings.axis=='y') { 
+            if (axis=='y') { 
               carouselCont.css('top', course + 'px');
             }
-            if (settings.axis=='x') {
+            if (axis=='x') {
               carouselCont.css('left', course + 'px');
             }
-            activateButton(nextButton);
           },settings.speed+100);
         }
 
         course = course - settings.initialCourse - itemMeasure - settings.itemMargin;
         clickTimes = clickTimes + 1;
-        if (settings.axis=='y') { 
+        if (axis=='y') { 
           carouselCont.animate({ 'top': course},settings.speed);
         }
-        if (settings.axis=='x') { 
+        if (axis=='x') { 
           carouselCont.animate({ 'left': course},settings.speed);
         }
 
-        checkProperties();
-      });
+        
 
+        setTimeout(function () {
+          activateButton(nextButton);
+          checkProperties();
+        },settings.speed+100);
+      }
 
       function checkProperties() {
         if (course >= settings.initialCourse && settings.loop==false) { 
@@ -149,8 +164,42 @@
         key.removeClass('inactive');
       }
 
-    }
+      // TOUCH ACTIONS (if hammer.js is loaded)
+      if(typeof Hammer != 'undefined') {
 
+        if (settings.axis=='y') { 
+          carouselListCont.bind("touchstart", function(e){
+            e.preventDefault();
+          });
+
+          carouselListCont.bind("touchmove", function(e){
+            e.preventDefault();
+          });
+
+          carouselViewport.hammer().on('pandown', function() {
+            $(this).find('.prev:not(.inactive)').trigger('click');
+          });
+
+          carouselViewport.hammer().on('panup', function() {
+            $(this).find('.next:not(.inactive)').trigger('click');
+          });
+        }
+        
+
+        if (settings.axis=='x') { 
+          carouselViewport.hammer().on('swiperight', function() {
+            $(this).find('.prev:not(.inactive)').trigger('click');
+          });
+
+          carouselViewport.hammer().on('swipeleft', function() {
+            $(this).find('.next:not(.inactive)').trigger('click');
+          });
+        }
+      }
+      // end of TOUCH ACTIONS
+
+    }
+    
 
 
   }

@@ -6,8 +6,8 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>BWAY Image Slider jQuery Plugin</title>
-        <meta name="description" content="Nice and really simple jQuery image slider plugin with options for Horizontal or Vertical axis and infinite loop.">
+        <title>BWAY jQuery Image Slider Plugin</title>
+        <meta name="description" content="Very easy to use jQuery image slider with option for Horizontal or Vertical axis and infinite loop.">
         <meta name="author" content="Bway">
 
         <link rel="icon" href="favicon.ico">
@@ -28,9 +28,10 @@
 
         <div class="logo"><img src="imgs/logo.png" /></div>
 
-        <h1>Bway Image Slider v1.0.0<span>&nbsp;&nbsp;[jQuery plugin]</span></h1>
-        <h4>Allows vertical and horizontal axis usage</h4>
-        <p>Nice jQuery image slider with option for Horizontal or Vertical axis, with or without infinite loop.</p>
+        <h1>Bway Image Slider v1.0.1<span>&nbsp;&nbsp;[jQuery plugin]</span></h1>
+        <h4>Allows vertical or horizontal axis usage.</h4>
+        <p>Very easy to use jQuery image slider with option for Horizontal or Vertical axis and infinite loop.</p>
+        <p><strong>v1.0.1</strong> Enables touch actions, using jquery.hammer.js</p>
 
         <h2>Download</h2>
         <p>You can Download this plugin from <a href="https://github.com/bway-dev/bway-image-slider" target="_blank">our github repository</a>.</p>
@@ -38,6 +39,11 @@
         <h2>Setup...</h2>
         <h4>Load jQuery and include bway-image-slider plugin</h4>
         <pre>&lt;script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"&gt;&lt;/script&gt;
+&lt;script src="jquery.bway.imageslider.min.js"&gt;&lt;/script&gt;</pre>
+        <br />
+        <p>If you want touch events, please load also hammer.js before this plugin, as you see in the lines below:</p>
+        <pre>&lt;script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"&gt;&lt;/script&gt;
+&lt;script src="//cdn.jsdelivr.net/g/hammerjs@2.0.4,jquery.hammerjs@2.0.0"&gt;&lt;/script&gt;
 &lt;script src="jquery.bway.imageslider.min.js"&gt;&lt;/script&gt;</pre>
         <br />
 
@@ -235,7 +241,8 @@
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
 
         <script src="js/vendor/bootstrap.min.js"></script>
-        <script src="js/jquery.bway.imageslider.min.js"></script>
+        <script src="//cdn.jsdelivr.net/g/hammerjs@2.0.4,jquery.hammerjs@2.0.0"></script>
+        <script src="js/jquery.bway.imageslider.js"></script>
         
         <script type="text/javascript">
           $(document).on('ready', function(){
@@ -271,7 +278,7 @@
 
 
 
-        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+        <!-- Google Analytics -->
         <script>
           (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
           (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),

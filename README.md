@@ -1,9 +1,12 @@
-# bway-image-slider v1.0.0
-Nice jQuery image slider with option for Horizontal or Vertical axis.
+# bway-image-slider v1.0.1
+Very easy to use jQuery image slider with option for Horizontal or Vertical axis and infinite loop.
+
+v1.0.1 - Enables touch actions, using jquery.hammer.js
 
 
 ### Requires
 jQuery
+hammer.js (optional - if touch events are needed)
 
 
 ### Examples
@@ -18,6 +21,15 @@ You can check our examples in our product page by [clicking here](http://bway.pt
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 <script src="jquery.bway.imageslider.min.js"></script>
 ```
+
+If you want touch events, please load also hammer.js before this plugin, as you see in the lines below:
+
+```
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script src="//cdn.jsdelivr.net/g/hammerjs@2.0.4,jquery.hammerjs@2.0.0"></script>
+<script src="jquery.bway.imageslider.min.js"></script>
+```
+
 
 
 #### Place your HTML markup
@@ -57,7 +69,8 @@ $('#your-gallery').bwayImageSlider({
 
 #### CSS
 
-The following lines are the css essencial code, all the rest like #your-gallery dimensions, or additional button styles were not included.
+The following lines are the css essencial code, you may need more CSS code, but these lines are the most important for this plugin to work.
+In our [example page](http://bway.pt/opensource/plugins/js/bway-image-slider) you can see our full implementation.
 
 ```
 #example1 {
