@@ -6,6 +6,7 @@ v1.0.1 - Enables touch actions, using jquery.hammer.js
 
 ### Requires
 jQuery
+
 hammer.js (optional - if touch events are needed)
 
 
