@@ -25,25 +25,38 @@
         totalItems = container.find('ul > li').length;
     
     if (nowready==false) {
-      var elementtoload = carouselListCont.find('li > img'),
+      var elementtoload = carouselListCont.find('li > *'),
           counter = 0;
-      function imageLoaded(ref,width) {
-        if (ref==totalItems) {
+
+      function imageLoaded(width,height) {
+        counter++;
+        if (counter==totalItems) {
           nowready = true;
-          initialize(width);
+          initialize(width,height);
         }
       }
-      elementtoload.one('load', function(){
-        counter++;
-        var width = $(this).width();
-        imageLoaded(counter,width);
+      elementtoload.each(function(){
+        
+        if ($(this).width()!=0 && $(this).height()!=0) {
+          var elementwidth = $(this).width();
+          var elementheight = $(this).height();
+          imageLoaded(elementwidth,elementheight);
+        }else{
+          $(this).one('load', function(){
+            var elementwidth = $(this).width();
+            var elementheight = $(this).height();
+            imageLoaded(elementwidth,elementheight);
+          });
+        }
+
+        
       });
     }
 
-    function initialize(elwidth) {
+    function initialize(elwidth,elheight) {
       if (settings.axis=='y') {
         var availableMeasure = (carouselViewport.outerHeight() - prevButton.height() - nextButton.height()),
-            itemMeasure = container.find('ul > li:first').height();
+            itemMeasure = elheight;
       }
       if (settings.axis=='x') {
         var availableMeasure = (carouselViewport.outerWidth() - prevButton.width() - nextButton.width()),

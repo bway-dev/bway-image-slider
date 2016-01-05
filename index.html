@@ -21,16 +21,17 @@
 
     </head>
     <body>
-        <!--[if lt IE 8]>
-            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
+      <!--[if lt IE 8]>
+          <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+      <![endif]-->
       <div class="container">
 
         <div class="logo"><img src="imgs/logo.png" /></div>
 
-        <h1>Bway Image Slider v1.0.1<span>&nbsp;&nbsp;[jQuery plugin]</span></h1>
+        <h1>Bway Image Slider v1.0.2<span>&nbsp;&nbsp;[jQuery plugin]</span></h1>
         <h4>Allows vertical or horizontal axis usage.</h4>
         <p>Very easy to use jQuery image slider with option for Horizontal or Vertical axis and infinite loop.</p>
+        <p><strong>v1.0.2</strong> Allows <code>&lt;a&gt;</code> or <code>&lt;img&gt;</code> as list elements.</p>
         <p><strong>v1.0.1</strong> Enables touch actions, using jquery.hammer.js</p>
 
         <h2>Download</h2>
@@ -48,6 +49,9 @@
         <br />
 
         <h4>Place your HTML markup</h4>
+        with <code>&lt;img&gt;</code> elements
+        <br />
+        <br />
         <pre>&lt;div id="your-gallery"&gt;
   &lt;div class="viewport"&gt;
     &lt;input type="button" class="buttons prev" value="&lt;"&gt;
@@ -56,6 +60,22 @@
       &lt;li&gt;&lt;img src="path-to-your-image"&gt;&lt;/li&gt;
       &lt;li&gt;&lt;img src="path-to-your-image"&gt;&lt;/li&gt;
       &lt;li&gt;&lt;img src="path-to-your-image"&gt;&lt;/li&gt;
+    &lt;/ul>
+    &lt;input type="button" class="buttons next" value="&gt;"&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</pre>
+        <br />
+        or if you prefer <code>&lt;a&gt;</code> elements
+        <br />
+        <br />
+        <pre>&lt;div id="your-gallery"&gt;
+  &lt;div class="viewport"&gt;
+    &lt;input type="button" class="buttons prev" value="&lt;"&gt;
+    &lt;ul class="overview"&gt;
+      &lt;li&gt;&lt;a href="#" style="background-image: url('path-to-your-image');"&gt;&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href="#" style="background-image: url('path-to-your-image');"&gt;&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href="#" style="background-image: url('path-to-your-image');"&gt;&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href="#" style="background-image: url('path-to-your-image');"&gt;&lt;/a&gt;&lt;/li&gt;
     &lt;/ul>
     &lt;input type="button" class="buttons next" value="&gt;"&gt;
   &lt;/div&gt;
@@ -87,15 +107,15 @@
               <input type="button" class="buttons prev" value="">
               <div class="overview">
                 <ul>
-                  <li><img src="http://lorempixel.com/220/150/people/1"></li>
-                  <li><img src="http://lorempixel.com/220/150/people/2"></li>
-                  <li><img src="http://lorempixel.com/220/150/people/3"></li>
-                  <li><img src="http://lorempixel.com/220/150/people/4"></li>
-                  <li><img src="http://lorempixel.com/220/150/people/5"></li>
-                  <li><img src="http://lorempixel.com/220/150/people/6"></li>
-                  <li><img src="http://lorempixel.com/220/150/people/7"></li>
-                  <li><img src="http://lorempixel.com/220/150/people/8"></li>
-                  <li><img src="http://lorempixel.com/220/150/people/9"></li>
+                  <li><img src="imgs/image4.jpeg"></li>
+                  <li><img src="imgs/image2.jpeg"></li>
+                  <li><img src="imgs/image9.jpeg"></li>
+                  <li><img src="imgs/image8.jpeg"></li>
+                  <li><img src="imgs/image3.jpeg"></li>
+                  <li><img src="imgs/image1.jpeg"></li>
+                  <li><img src="imgs/image5.jpeg"></li>
+                  <li><img src="imgs/image6.jpeg"></li>
+                  <li><img src="imgs/image7.jpeg"></li>
                 </ul>
               </div>
               <input type="button" class="buttons next" value="">
@@ -116,15 +136,15 @@
               <input type="button" class="buttons prev" value="">
               <div class="overview">
                 <ul>
-                  <li><img src="http://lorempixel.com/220/150/people/1"></li>
-                  <li><img src="http://lorempixel.com/220/150/people/2"></li>
-                  <li><img src="http://lorempixel.com/220/150/people/3"></li>
-                  <li><img src="http://lorempixel.com/220/150/people/4"></li>
-                  <li><img src="http://lorempixel.com/220/150/people/5"></li>
-                  <li><img src="http://lorempixel.com/220/150/people/6"></li>
-                  <li><img src="http://lorempixel.com/220/150/people/7"></li>
-                  <li><img src="http://lorempixel.com/220/150/people/8"></li>
-                  <li><img src="http://lorempixel.com/220/150/people/9"></li>
+                  <li><img src="imgs/image6.jpeg"></li>
+                  <li><img src="imgs/image8.jpeg"></li>
+                  <li><img src="imgs/image1.jpeg"></li>
+                  <li><img src="imgs/image3.jpeg"></li>
+                  <li><img src="imgs/image9.jpeg"></li>
+                  <li><img src="imgs/image2.jpeg"></li>
+                  <li><img src="imgs/image4.jpeg"></li>
+                  <li><img src="imgs/image7.jpeg"></li>
+                  <li><img src="imgs/image5.jpeg"></li>
                 </ul>
               </div>
               <input type="button" class="buttons next" value="">
@@ -143,19 +163,20 @@
           <div class="col-xs-12 col-sm-6 col-md-6 sample" id="example3">
 
             <h4>VERTICAL (no loop)</h4>
+            <p class="text-center">with <code>&lt;a&gt;</code> elements</p>
             <div class="viewport">
               <input type="button" class="buttons prev" value="">
               <div class="overview">
                 <ul>
-                  <li><img src="http://lorempixel.com/220/150/people/1"></li>
-                  <li><img src="http://lorempixel.com/220/150/people/2"></li>
-                  <li><img src="http://lorempixel.com/220/150/people/3"></li>
-                  <li><img src="http://lorempixel.com/220/150/people/4"></li>
-                  <li><img src="http://lorempixel.com/220/150/people/5"></li>
-                  <li><img src="http://lorempixel.com/220/150/people/6"></li>
-                  <li><img src="http://lorempixel.com/220/150/people/7"></li>
-                  <li><img src="http://lorempixel.com/220/150/people/8"></li>
-                  <li><img src="http://lorempixel.com/220/150/people/9"></li>
+                  <li><a href="#" style="background-image: url('imgs/image4.jpeg');"></a></li>
+                  <li><a href="#" style="background-image: url('imgs/image2.jpeg');"></a></li>
+                  <li><a href="#" style="background-image: url('imgs/image6.jpeg');"></a></li>
+                  <li><a href="#" style="background-image: url('imgs/image7.jpeg');"></a></li>
+                  <li><a href="#" style="background-image: url('imgs/image9.jpeg');"></a></li>
+                  <li><a href="#" style="background-image: url('imgs/image1.jpeg');"></a></li>
+                  <li><a href="#" style="background-image: url('imgs/image3.jpeg');"></a></li>
+                  <li><a href="#" style="background-image: url('imgs/image5.jpeg');"></a></li>
+                  <li><a href="#" style="background-image: url('imgs/image8.jpeg');"></a></li>
                 </ul>
               </div>
               <input type="button" class="buttons next" value="">
@@ -173,19 +194,20 @@
           <div class="col-xs-12 col-sm-6 col-md-6 sample" id="example4">
 
             <h4>VERTICAL + INFINITE LOOP</h4>
+            <p class="text-center">with <code>&lt;img&gt;</code> elements</p>
             <div class="viewport">
               <input type="button" class="buttons prev" value="">
               <div class="overview">
                 <ul>
-                  <li><img src="http://lorempixel.com/220/150/people/1"></li>
-                  <li><img src="http://lorempixel.com/220/150/people/2"></li>
-                  <li><img src="http://lorempixel.com/220/150/people/3"></li>
-                  <li><img src="http://lorempixel.com/220/150/people/4"></li>
-                  <li><img src="http://lorempixel.com/220/150/people/5"></li>
-                  <li><img src="http://lorempixel.com/220/150/people/6"></li>
-                  <li><img src="http://lorempixel.com/220/150/people/7"></li>
-                  <li><img src="http://lorempixel.com/220/150/people/8"></li>
-                  <li><img src="http://lorempixel.com/220/150/people/9"></li>
+                  <li><img src="imgs/image1.jpeg"></li>
+                  <li><img src="imgs/image2.jpeg"></li>
+                  <li><img src="imgs/image3.jpeg"></li>
+                  <li><img src="imgs/image4.jpeg"></li>
+                  <li><img src="imgs/image5.jpeg"></li>
+                  <li><img src="imgs/image6.jpeg"></li>
+                  <li><img src="imgs/image7.jpeg"></li>
+                  <li><img src="imgs/image8.jpeg"></li>
+                  <li><img src="imgs/image9.jpeg"></li>
                 </ul>
               </div>
               <input type="button" class="buttons next" value="">

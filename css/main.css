@@ -119,6 +119,7 @@ footer {
   list-style: none;
   height: 150px;
   padding: 0;
+  line-height: 0;
 }
 
 #example1 li {
@@ -188,6 +189,7 @@ footer {
   list-style: none;
   height: 150px;
   padding: 0;
+  line-height: 0;
 }
 
 #example2 li {
@@ -256,11 +258,20 @@ footer {
   list-style: none;
   height: 150px;
   padding: 0;
+  line-height: 0;
 }
 
 #example3 li {
   display: inline-block;
   margin: 7px 0;
+}
+
+/* this example uses <a> */
+#example3 li a {
+  display: block;
+  width: 220px;
+  height: 150px;
+  margin: 0;
 }
 
 
@@ -323,6 +334,7 @@ footer {
   list-style: none;
   height: 150px;
   padding: 0;
+  line-height: 0;
 }
 
 #example4 li {

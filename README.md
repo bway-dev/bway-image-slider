@@ -1,12 +1,12 @@
-# bway-image-slider v1.0.1
+# bway-image-slider v1.0.2
 Very easy to use jQuery image slider with option for Horizontal or Vertical axis and infinite loop.
 
+v1.0.2 - Allows `<a>` or `<img>` as list elements. 
 v1.0.1 - Enables touch actions, using jquery.hammer.js
 
 
 ### Requires
-jQuery
-
+jQuery 
 hammer.js (optional - if touch events are needed)
 
 
@@ -34,6 +34,9 @@ If you want touch events, please load also hammer.js before this plugin, as you 
 
 
 #### Place your HTML markup
+
+with `<img>` elements 
+
 ```
 <div id="your-gallery">
   <div class="viewport">
@@ -48,6 +51,24 @@ If you want touch events, please load also hammer.js before this plugin, as you 
   </div>
 </div>
 ```
+
+or if you prefer `<a>` elements 
+
+```
+<div id="your-gallery">
+  <div class="viewport">
+    <input type="button" class="buttons prev" value="<">
+    <ul class="overview">
+      <li><a href="#" style="background-image: url('path-to-your-image');"></a></li>
+      <li><a href="#" style="background-image: url('path-to-your-image');"></a></li>
+      <li><a href="#" style="background-image: url('path-to-your-image');"></a></li>
+      <li><a href="#" style="background-image: url('path-to-your-image');"></a></li>
+    </ul>
+    <input type="button" class="buttons next" value=">">
+  </div>
+</div>
+```
+
 
 
 #### Initialization
@@ -130,11 +151,21 @@ In our [example page](http://bway.pt/opensource/plugins/js/bway-image-slider) yo
   margin: 0 7px;
 }
 
+/* if you are using <a> instead of <img> */
+#example1 li a {
+  display: block;
+  width: 220px;
+  height: 150px;
+  margin: 0;
+}
+
 #example1 .buttons.prev {
   left: 0;     /* if you're using 'x' axis */
+  top: 0;      /* if you're using 'y' axis */
 }
 #example1 .buttons.next {
   right: 0;    /* if you're using 'x' axis */
+  bottom: 0;   /* if you're using 'y' axis */
 }
 
 
