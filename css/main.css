@@ -263,6 +263,7 @@ footer {
 
 #example3 li {
   display: inline-block;
+  width: 100%;
   margin: 7px 0;
 }
 
@@ -338,6 +339,7 @@ footer {
 }
 
 #example4 li {
+  width: 100%;
   display: inline-block;
   margin: 7px 0;
 }

@@ -37,14 +37,14 @@
       }
       elementtoload.each(function(){
         
-        if ($(this).width()!=0 && $(this).height()!=0) {
+        if ($(this).width()!=0 && $(this).outerHeight()!=0) {
           var elementwidth = $(this).width();
-          var elementheight = $(this).height();
+          var elementheight = $(this).outerHeight();
           imageLoaded(elementwidth,elementheight);
         }else{
           $(this).one('load', function(){
             var elementwidth = $(this).width();
-            var elementheight = $(this).height();
+            var elementheight = $(this).outerHeight();
             imageLoaded(elementwidth,elementheight);
           });
         }
