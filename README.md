@@ -2,11 +2,13 @@
 Very easy to use jQuery image slider with option for Horizontal or Vertical axis and infinite loop.
 
 v1.0.2 - Allows `<a>` or `<img>` as list elements. 
+
 v1.0.1 - Enables touch actions, using jquery.hammer.js
 
 
 ### Requires
 jQuery 
+
 hammer.js (optional - if touch events are needed)
 
 
