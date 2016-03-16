@@ -1,5 +1,8 @@
-# bway-image-slider v1.0.2
-Very easy to use jQuery image slider with option for Horizontal or Vertical axis and infinite loop.
+# bway-image-slider v1.0.3
+Very easy to use and fully responsive jQuery image slider plugin with option for Horizontal or Vertical axis and infinite loop.
+Includes also touch events, and current/total information.
+
+v1.0.3 - Includes image counter. Just needs to include `.image-current` and `.image-total` classes.
 
 v1.0.2 - Allows `<a>` or `<img>` as list elements. 
 

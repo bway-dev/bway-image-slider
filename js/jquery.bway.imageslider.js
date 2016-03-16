@@ -22,7 +22,10 @@
         carouselViewport = container.find('.viewport'),
         carouselListCont = carouselViewport.find('ul'),
         carouselCont = container.find('.overview'),
-        totalItems = container.find('ul > li').length;
+        totalItems = container.find('ul > li').length,
+        currentImage = 1,
+        currentCont = container.find('.image-current'), //this container will display de actual image index
+        totalCont = container.find('.image-total');     //this container will display de total images
     
     if (nowready==false) {
       var elementtoload = carouselListCont.find('li > *'),
@@ -64,6 +67,7 @@
             maxWithCont = (itemMeasure + settings.itemMargin) * totalItems;
       }
 
+      updateCounter(0);
 
       checkProperties();
 
@@ -104,7 +108,7 @@
           carouselCont.animate({ 'left': course},settings.speed);
         }
         
-
+        updateCounter(-1);
 
         setTimeout(function () {
           activateButton(prevButton);
@@ -138,12 +142,24 @@
           carouselCont.animate({ 'left': course},settings.speed);
         }
 
-        
+        updateCounter(1);
 
         setTimeout(function () {
           activateButton(nextButton);
           checkProperties();
         },settings.speed+100);
+      }
+
+      function updateCounter(value) {
+        if (currentImage==1 && value==-1) {
+          currentImage = totalItems;
+        } else if (currentImage==totalItems && value==+1) { 
+          currentImage = 1;
+        } else {
+          currentImage = currentImage + value;
+        }
+        currentCont.text(currentImage);
+        totalCont.text(totalItems);
       }
 
       function checkProperties() {
