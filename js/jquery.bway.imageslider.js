@@ -8,7 +8,8 @@
       initialCourse : 0,
       speed         : 1500,
       itemMargin    : 10,
-      loop          : false
+      loop          : false,
+      keyboard      : false
     }, options );
 
 
@@ -25,17 +26,18 @@
         totalItems = container.find('ul > li').length,
         currentImage = 1,
         currentCont = container.find('.image-current'), //this container will display de actual image index
-        totalCont = container.find('.image-total');     //this container will display de total images
+        totalCont = container.find('.image-total'),     //this container will display de total images
+        realTotalCourseWidth = 0;
     
     if (nowready==false) {
       var elementtoload = carouselListCont.find('li > *'),
           counter = 0;
 
-      function imageLoaded(width,height) {
+      function imageLoaded(width,height,totalWidth) {
         counter++;
         if (counter==totalItems) {
           nowready = true;
-          initialize(width,height);
+          initialize(width,height,totalWidth);
         }
       }
       elementtoload.each(function(){
@@ -43,12 +45,14 @@
         if ($(this).width()!=0 && $(this).outerHeight()!=0) {
           var elementwidth = $(this).width();
           var elementheight = $(this).outerHeight();
-          imageLoaded(elementwidth,elementheight);
+          realTotalCourseWidth += $(this).width();
+          imageLoaded(elementwidth,elementheight,realTotalCourseWidth);
         }else{
           $(this).one('load', function(){
             var elementwidth = $(this).width();
             var elementheight = $(this).outerHeight();
-            imageLoaded(elementwidth,elementheight);
+            realTotalCourseWidth += $(this).width();
+            imageLoaded(elementwidth,elementheight,realTotalCourseWidth);
           });
         }
 
@@ -56,7 +60,7 @@
       });
     }
 
-    function initialize(elwidth,elheight) {
+    function initialize(elwidth,elheight,totalWidth) {
       if (settings.axis=='y') {
         var availableMeasure = (carouselViewport.outerHeight() - prevButton.height() - nextButton.height()),
             itemMeasure = elheight;
@@ -64,12 +68,12 @@
       if (settings.axis=='x') {
         var availableMeasure = (carouselViewport.outerWidth() - prevButton.width() - nextButton.width()),
             itemMeasure = elwidth,
-            maxWithCont = (itemMeasure + settings.itemMargin) * totalItems;
+            maxWithCont = totalWidth + (settings.itemMargin*totalItems);
       }
 
       updateCounter(0);
-
       checkProperties();
+      carouselListCont.find('li').eq(0).addClass('selected');
 
       prevButton.on('click', body, function(e){
         e.preventDefault();
@@ -89,7 +93,8 @@
 
         if (loop==true) {
           carouselListCont.prepend(carouselListCont.find('li:last'));
-          course = course - settings.initialCourse - itemMeasure - settings.itemMargin;
+          course = course - calculateNextItem(axis,'prev') - settings.itemMargin;
+
           if (axis=='y') { 
             carouselCont.css('top', course + 'px');
           }
@@ -98,7 +103,7 @@
           }
         }
 
-        course = course + settings.initialCourse + itemMeasure + settings.itemMargin;
+        course = course + calculateNextItem(axis,'prev') + settings.itemMargin;
         clickTimes = clickTimes - 1;
         
         if (axis=='y') { 
@@ -109,6 +114,7 @@
         }
         
         updateCounter(-1);
+        carouselCont.find('li.selected').removeClass('selected').prev().addClass('selected');
 
         setTimeout(function () {
           activateButton(prevButton);
@@ -123,7 +129,7 @@
         if (loop==true) {
           setTimeout(function () {
             carouselListCont.append(carouselListCont.find('li:first'));
-            course = course + settings.initialCourse + itemMeasure + settings.itemMargin;
+            course = 0;
             if (axis=='y') { 
               carouselCont.css('top', course + 'px');
             }
@@ -133,7 +139,8 @@
           },settings.speed+100);
         }
 
-        course = course - settings.initialCourse - itemMeasure - settings.itemMargin;
+        course = course - calculateNextItem(axis,'next') - settings.itemMargin;
+        console.log(course);
         clickTimes = clickTimes + 1;
         if (axis=='y') { 
           carouselCont.animate({ 'top': course},settings.speed);
@@ -143,11 +150,25 @@
         }
 
         updateCounter(1);
+        carouselCont.find('li.selected').removeClass('selected').next().addClass('selected');
 
         setTimeout(function () {
           activateButton(nextButton);
           checkProperties();
         },settings.speed+100);
+      }
+
+      function calculateNextItem(axis,movement) {
+        var actual = carouselCont.find('.selected');
+        if (axis=='x') {
+          if (movement=='prev') {
+            newCourse = actual.prev().width();
+          }
+          if (movement=='next') {
+            newCourse = actual.width();
+          }
+        }
+        return newCourse;
       }
 
       function updateCounter(value) {
@@ -226,6 +247,36 @@
         }
       }
       // end of TOUCH ACTIONS
+
+      // KEYBOARD ACTIONS (if hammer.js is loaded)
+      if(settings.keyboard == true) {
+
+        if (settings.axis=='y') { 
+          body.keyup(function(e) {
+            if (e.keyCode == 38) {
+              $(this).find('.prev:not(.inactive)').trigger('click');
+            }
+
+            if (e.keyCode == 40) {
+              $(this).find('.next:not(.inactive)').trigger('click');
+            }
+          });
+        }
+        
+
+        if (settings.axis=='x') { 
+          body.keyup(function(e) {
+            if (e.keyCode == 37) {
+              $(this).find('.prev:not(.inactive)').trigger('click');
+            }
+
+            if (e.keyCode == 39) {
+              $(this).find('.next:not(.inactive)').trigger('click');
+            }
+          });
+        }
+      }
+      // end of KEYBOARD ACTIONS
 
     }
     

@@ -28,9 +28,11 @@
 
         <div class="logo"><img src="imgs/logo.png" /></div>
 
-        <h1>Bway Image Slider v1.0.3<span>&nbsp;&nbsp;[jQuery plugin]</span></h1>
+        <h1>Bway Image Slider v1.0.5<span>&nbsp;&nbsp;[jQuery plugin]</span></h1>
         <h4>Allows vertical or horizontal axis usage.</h4>
         <p>Very easy to use and responsive jQuery image slider plugin with option for Horizontal or Vertical axis and infinite loop.<br />Includes also touch events, and current/total information.</p>
+        <p><strong>v1.0.5</strong> Different objects size allowed in 'x' axis.</p>
+        <p><strong>v1.0.4</strong> Allows keyboard controls. <code>keyboard : true</code></p>
         <p><strong>v1.0.3</strong> Includes image counter. Just needs to include <code>.image-current</code> and <code>.image-total</code> classes.</p>
         <p><strong>v1.0.2</strong> Allows <code>&lt;a&gt;</code> or <code>&lt;img&gt;</code> as list elements.</p>
         <p><strong>v1.0.1</strong> Enables touch actions, using jquery.hammer.js</p>
@@ -92,7 +94,8 @@
   axis       : 'y',  // default 'x'
   itemMargin : 14,   // margin between items, default 10
   speed      : 500,  // miliseconds, default 1500
-  loop       : true
+  loop       : true,
+  keyboard   : true
 });</pre>
         <br />
 
@@ -125,7 +128,8 @@
   axis       : 'x',
   itemMargin : 14,
   speed      : 500,
-  loop       : false
+  loop       : false,
+  keyboard   : true
 });</pre>
           </div>
 
@@ -154,7 +158,8 @@
   axis       : 'x',
   itemMargin : 14,
   speed      : 500,
-  loop       : true
+  loop       : true,
+  keyboard   : true
 });</pre>
           </div>
 
@@ -186,7 +191,8 @@
   axis       : 'y',
   itemMargin : 14,
   speed      : 500,
-  loop       : false
+  loop       : false,
+  keyboard   : true
 });</pre>
           </div>
 
@@ -217,7 +223,8 @@
   axis       : 'y',
   itemMargin : 14,
   speed      : 500,
-  loop       : true
+  loop       : true,
+  keyboard   : true
 });</pre>
           </div>
 
@@ -273,28 +280,32 @@
               axis       : 'x',  // default 'x'
               itemMargin : 14,   // margin between items, default 10
               speed      : 500,  // miliseconds, default 1500
-              loop       : false
+              loop       : false,
+              keyboard   : true
             });
 
             $('#example2').bwayImageSlider({
               axis       : 'x',  // default 'x'
               itemMargin : 14,   // margin between items, default 10
               speed      : 500,  // miliseconds, default 1500
-              loop       : true
+              loop       : true,
+              keyboard   : true
             });
 
             $('#example3').bwayImageSlider({
               axis       : 'y',  // default 'x'
               itemMargin : 14,   // margin between items, default 10
               speed      : 500,  // miliseconds, default 1500
-              loop       : false
+              loop       : false,
+              keyboard   : true
             });
 
             $('#example4').bwayImageSlider({
               axis       : 'y',  // default 'x'
               itemMargin : 14,   // margin between items, default 10
               speed      : 500,  // miliseconds, default 1500
-              loop       : true
+              loop       : true,
+              keyboard   : true
             });
 
           });

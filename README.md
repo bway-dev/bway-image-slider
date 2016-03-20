@@ -2,6 +2,10 @@
 Very easy to use and fully responsive jQuery image slider plugin with option for Horizontal or Vertical axis and infinite loop.
 Includes also touch events, and current/total information.
 
+v1.0.5 - Different objects size allowed in 'x' axis.
+
+v1.0.4 - Allows keyboard controls. `keyboard : true`.
+
 v1.0.3 - Includes image counter. Just needs to include `.image-current` and `.image-total` classes.
 
 v1.0.2 - Allows `<a>` or `<img>` as list elements. 
@@ -90,7 +94,8 @@ $('#your-gallery').bwayImageSlider({
   axis       : 'y',  // default 'x'
   itemMargin : 14,   // margin between items, default 10
   speed      : 500,  // miliseconds, default 1500
-  loop       : true
+  loop       : true,
+  keyboard   : true
 });
 ```
 
@@ -154,6 +159,7 @@ In our [example page](http://bway.pt/opensource/plugins/js/bway-image-slider) yo
   display: inline-block;
   float: left;
   margin: 0 7px;
+  height: 150px; /* if you are using <img> of different proportions, in X axis */
 }
 
 /* if you are using <a> instead of <img> */
@@ -173,6 +179,13 @@ In our [example page](http://bway.pt/opensource/plugins/js/bway-image-slider) yo
   bottom: 0;   /* if you're using 'y' axis */
 }
 
+/* if you are using <img> of different proportions, in X axis */
+#example1 li img {
+  display: block;
+  width: auto;
+  height: 100%;
+  margin: 0;
+}
 
 /* COMMON ELEMENTS */
 .examples .buttons.inactive {
