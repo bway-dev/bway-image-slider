@@ -126,6 +126,12 @@ footer {
   display: inline-block;
   float: left;
   margin: 0 7px;
+  height: 150px;
+}
+
+#example1 li img {
+  width: auto;
+  height: 100%;
 }
 
 #example1 .buttons.prev {
@@ -196,8 +202,13 @@ footer {
   display: inline-block;
   float: left;
   margin: 0 7px;
+  height: 150px;
 }
 
+#example2 li img {
+  width: auto;
+  height: 100%;
+}
 
 #example2 .buttons.prev {
   left: 0;     /* if you're using 'x' axis */

@@ -93,23 +93,26 @@
 
         if (loop==true) {
           carouselListCont.prepend(carouselListCont.find('li:last'));
-          course = course - calculateNextItem(axis,'prev') - settings.itemMargin;
 
           if (axis=='y') { 
+            course = course - settings.initialCourse - itemMeasure - settings.itemMargin;
             carouselCont.css('top', course + 'px');
           }
           if (axis=='x') {
+            course = course - calculateNextItem(axis,'prev') - settings.itemMargin;
             carouselCont.css('left', course + 'px');
           }
         }
 
-        course = course + calculateNextItem(axis,'prev') + settings.itemMargin;
+
         clickTimes = clickTimes - 1;
         
         if (axis=='y') { 
+          course = course + settings.initialCourse + itemMeasure + settings.itemMargin;
           carouselCont.animate({ 'top': course},settings.speed);
         }
-        if (axis=='x') { 
+        if (axis=='x') {
+          course = course + calculateNextItem(axis,'prev') + settings.itemMargin;
           carouselCont.animate({ 'left': course},settings.speed);
         }
         
@@ -129,23 +132,25 @@
         if (loop==true) {
           setTimeout(function () {
             carouselListCont.append(carouselListCont.find('li:first'));
-            course = 0;
-            if (axis=='y') { 
+
+            if (axis=='y') {
+              course = course + settings.initialCourse + itemMeasure + settings.itemMargin;
               carouselCont.css('top', course + 'px');
             }
             if (axis=='x') {
+              course = 0;
               carouselCont.css('left', course + 'px');
             }
           },settings.speed+100);
         }
 
-        course = course - calculateNextItem(axis,'next') - settings.itemMargin;
-        console.log(course);
         clickTimes = clickTimes + 1;
         if (axis=='y') { 
+          course = course - settings.initialCourse - itemMeasure - settings.itemMargin;
           carouselCont.animate({ 'top': course},settings.speed);
         }
         if (axis=='x') { 
+          course = course - calculateNextItem(axis,'next') - settings.itemMargin;
           carouselCont.animate({ 'left': course},settings.speed);
         }
 
