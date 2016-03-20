@@ -253,33 +253,30 @@
       }
       // end of TOUCH ACTIONS
 
-      // KEYBOARD ACTIONS (if hammer.js is loaded)
-      if(settings.keyboard == true) {
+      // KEYBOARD ACTIONS
+      if (settings.axis=='y' && settings.keyboard == true) { 
+        body.keyup(function(e) {
+          if (e.keyCode == 38) {
+            $(this).find('.prev:not(.inactive)').trigger('click');
+          }
 
-        if (settings.axis=='y') { 
-          body.keyup(function(e) {
-            if (e.keyCode == 38) {
-              $(this).find('.prev:not(.inactive)').trigger('click');
-            }
+          if (e.keyCode == 40) {
+            $(this).find('.next:not(.inactive)').trigger('click');
+          }
+        });
+      }
+      
 
-            if (e.keyCode == 40) {
-              $(this).find('.next:not(.inactive)').trigger('click');
-            }
-          });
-        }
-        
+      if (settings.axis=='x' && settings.keyboard == true) { 
+        body.keyup(function(e) {
+          if (e.keyCode == 37) {
+            $(this).find('.prev:not(.inactive)').trigger('click');
+          }
 
-        if (settings.axis=='x') { 
-          body.keyup(function(e) {
-            if (e.keyCode == 37) {
-              $(this).find('.prev:not(.inactive)').trigger('click');
-            }
-
-            if (e.keyCode == 39) {
-              $(this).find('.next:not(.inactive)').trigger('click');
-            }
-          });
-        }
+          if (e.keyCode == 39) {
+            $(this).find('.next:not(.inactive)').trigger('click');
+          }
+        });
       }
       // end of KEYBOARD ACTIONS
 
