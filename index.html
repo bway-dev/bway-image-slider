@@ -28,9 +28,10 @@
 
         <div class="logo"><img src="imgs/logo.png" /></div>
 
-        <h1>Bway Image Slider v1.0.5<span>&nbsp;&nbsp;[jQuery plugin]</span></h1>
+        <h1>Bway Image Slider v1.0.6<span>&nbsp;&nbsp;[jQuery plugin]</span></h1>
         <h4>Allows vertical or horizontal axis usage.</h4>
         <p>Very easy to use and responsive jQuery image slider plugin with option for Horizontal or Vertical axis and infinite loop.<br />Includes also touch events, and current/total information.</p>
+        <p><strong>v1.0.6</strong> Loader controlable, since you have <code>.loader-overlay</code> in your container. (we are using some css loaders from this awsome <a href="http://tobiasahlin.com/spinkit/" target="_blank">project)</a></p>
         <p><strong>v1.0.5</strong> Different objects size allowed in 'x' axis.</p>
         <p><strong>v1.0.4</strong> Allows keyboard controls. <code>keyboard : true</code></p>
         <p><strong>v1.0.3</strong> Includes image counter. Just needs to include <code>.image-current</code> and <code>.image-total</code> classes.</p>
@@ -52,11 +53,29 @@
         <br />
 
         <h4>Place your HTML markup</h4>
-        with <code>&lt;img&gt;</code> elements
+        with <code>&lt;img&gt;</code> elements (in this example we are including a loader)
         <br />
         <br />
         <pre>&lt;div id="your-gallery"&gt;
   &lt;div class="viewport"&gt;
+  &lt;!-- LOADER (optional) --&gt;
+  &lt;div class="loader-overlay"&gt;
+    &lt;div class="sk-circle"&gt;
+      &lt;div class="sk-circle1 sk-child"&gt;&lt;/div&gt;
+      &lt;div class="sk-circle2 sk-child"&gt;&lt;/div&gt;
+      &lt;div class="sk-circle3 sk-child"&gt;&lt;/div&gt;
+      &lt;div class="sk-circle4 sk-child"&gt;&lt;/div&gt;
+      &lt;div class="sk-circle5 sk-child"&gt;&lt;/div&gt;
+      &lt;div class="sk-circle6 sk-child"&gt;&lt;/div&gt;
+      &lt;div class="sk-circle7 sk-child"&gt;&lt;/div&gt;
+      &lt;div class="sk-circle8 sk-child"&gt;&lt;/div&gt;
+      &lt;div class="sk-circle9 sk-child"&gt;&lt;/div&gt;
+      &lt;div class="sk-circle10 sk-child"&gt;&lt;/div&gt;
+      &lt;div class="sk-circle11 sk-child"&gt;&lt;/div&gt;
+      &lt;div class="sk-circle12 sk-child"&gt;&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;!-- end of LOADER (optional) --&gt;
     &lt;input type="button" class="buttons prev" value="&lt;"&gt;
     &lt;ul class="overview"&gt;
       &lt;li&gt;&lt;img src="path-to-your-image"&gt;&lt;/li&gt;
@@ -68,7 +87,7 @@
   &lt;/div&gt;
 &lt;/div&gt;</pre>
         <br />
-        or if you prefer <code>&lt;a&gt;</code> elements
+        or if you prefer <code>&lt;a&gt;</code> elements (in this example we are NOT including a loader)
         <br />
         <br />
         <pre>&lt;div id="your-gallery"&gt;
@@ -95,7 +114,8 @@
   itemMargin : 14,   // margin between items, default 10
   speed      : 500,  // miliseconds, default 1500
   loop       : true,
-  keyboard   : true
+  keyboard   : true,
+  loader     : true
 });</pre>
         <br />
 
@@ -108,6 +128,21 @@
           
           <div class="col-xs-12 col-sm-12 col-md-12 sample" id="example1">
             <div class="viewport">
+              <!-- LOADER (optional) -->
+              <div class="loader-overlay">
+                <div class="sk-cube-grid">
+                  <div class="sk-cube sk-cube1"></div>
+                  <div class="sk-cube sk-cube2"></div>
+                  <div class="sk-cube sk-cube3"></div>
+                  <div class="sk-cube sk-cube4"></div>
+                  <div class="sk-cube sk-cube5"></div>
+                  <div class="sk-cube sk-cube6"></div>
+                  <div class="sk-cube sk-cube7"></div>
+                  <div class="sk-cube sk-cube8"></div>
+                  <div class="sk-cube sk-cube9"></div>
+                </div>
+              </div>
+              <!-- end of LOADER (optional) -->
               <input type="button" class="buttons prev" value="">
               <div class="overview">
                 <ul>
@@ -130,7 +165,8 @@
   itemMargin : 14,
   speed      : 500,
   loop       : false,
-  keyboard   : true
+  keyboard   : true,
+  loader     : true
 });</pre>
           </div>
 
@@ -139,6 +175,24 @@
 
           <div class="col-xs-12 col-sm-12 col-md-12 sample" id="example2">
             <div class="viewport">
+              <!-- LOADER (optional) -->
+              <div class="loader-overlay">
+                <div class="sk-circle">
+                  <div class="sk-circle1 sk-child"></div>
+                  <div class="sk-circle2 sk-child"></div>
+                  <div class="sk-circle3 sk-child"></div>
+                  <div class="sk-circle4 sk-child"></div>
+                  <div class="sk-circle5 sk-child"></div>
+                  <div class="sk-circle6 sk-child"></div>
+                  <div class="sk-circle7 sk-child"></div>
+                  <div class="sk-circle8 sk-child"></div>
+                  <div class="sk-circle9 sk-child"></div>
+                  <div class="sk-circle10 sk-child"></div>
+                  <div class="sk-circle11 sk-child"></div>
+                  <div class="sk-circle12 sk-child"></div>
+                </div>
+              </div>
+              <!-- end of LOADER (optional) -->
               <input type="button" class="buttons prev" value="">
               <div class="overview">
                 <ul>
@@ -161,7 +215,8 @@
   itemMargin : 14,
   speed      : 500,
   loop       : true,
-  keyboard   : true
+  keyboard   : true,
+  loader     : true
 });</pre>
           </div>
 
@@ -173,6 +228,21 @@
             <h4>VERTICAL (no loop)</h4>
             <p class="text-center">with <code>&lt;a&gt;</code> elements</p>
             <div class="viewport">
+              <!-- LOADER (optional) -->
+              <div class="loader-overlay">
+                <div class="sk-cube-grid">
+                  <div class="sk-cube sk-cube1"></div>
+                  <div class="sk-cube sk-cube2"></div>
+                  <div class="sk-cube sk-cube3"></div>
+                  <div class="sk-cube sk-cube4"></div>
+                  <div class="sk-cube sk-cube5"></div>
+                  <div class="sk-cube sk-cube6"></div>
+                  <div class="sk-cube sk-cube7"></div>
+                  <div class="sk-cube sk-cube8"></div>
+                  <div class="sk-cube sk-cube9"></div>
+                </div>
+              </div>
+              <!-- end of LOADER (optional) -->
               <input type="button" class="buttons prev" value="">
               <div class="overview">
                 <ul>
@@ -193,7 +263,8 @@
   axis       : 'y',
   itemMargin : 14,
   speed      : 500,
-  loop       : false
+  loop       : false,
+  loader     : true
 });</pre>
           </div>
 
@@ -204,6 +275,21 @@
             <h4>VERTICAL + INFINITE LOOP</h4>
             <p class="text-center">with <code>&lt;img&gt;</code> elements</p>
             <div class="viewport">
+              <!-- LOADER (optional) -->
+              <div class="loader-overlay">
+                <div class="sk-cube-grid">
+                  <div class="sk-cube sk-cube1"></div>
+                  <div class="sk-cube sk-cube2"></div>
+                  <div class="sk-cube sk-cube3"></div>
+                  <div class="sk-cube sk-cube4"></div>
+                  <div class="sk-cube sk-cube5"></div>
+                  <div class="sk-cube sk-cube6"></div>
+                  <div class="sk-cube sk-cube7"></div>
+                  <div class="sk-cube sk-cube8"></div>
+                  <div class="sk-cube sk-cube9"></div>
+                </div>
+              </div>
+              <!-- end of LOADER (optional) -->
               <input type="button" class="buttons prev" value="">
               <div class="overview">
                 <ul>
@@ -224,7 +310,8 @@
   axis       : 'y',
   itemMargin : 14,
   speed      : 500,
-  loop       : true
+  loop       : true,
+  loader     : true
 });</pre>
           </div>
 
@@ -272,7 +359,8 @@
 
         <script src="js/vendor/bootstrap.min.js"></script>
         <script src="//cdn.jsdelivr.net/g/hammerjs@2.0.4,jquery.hammerjs@2.0.0"></script>
-        <script src="js/jquery.bway.imageslider.min.js"></script>
+<!--         <script src="js/jquery.bway.imageslider.min.js"></script> -->
+        <script src="js/jquery.bway.imageslider.js"></script>
         
         <script type="text/javascript">
           $(document).on('ready', function(){
@@ -281,7 +369,8 @@
               itemMargin : 14,   // margin between items, default 10
               speed      : 500,  // miliseconds, default 1500
               loop       : false,
-              keyboard   : true
+              keyboard   : true,
+              loader     : true
             });
 
             $('#example2').bwayImageSlider({
@@ -289,21 +378,24 @@
               itemMargin : 14,   // margin between items, default 10
               speed      : 500,  // miliseconds, default 1500
               loop       : true,
-              keyboard   : true
+              keyboard   : true,
+              loader     : true
             });
 
             $('#example3').bwayImageSlider({
               axis       : 'y',  // default 'x'
               itemMargin : 14,   // margin between items, default 10
               speed      : 500,  // miliseconds, default 1500
-              loop       : false
+              loop       : false,
+              loader     : true
             });
 
             $('#example4').bwayImageSlider({
               axis       : 'y',  // default 'x'
               itemMargin : 14,   // margin between items, default 10
               speed      : 500,  // miliseconds, default 1500
-              loop       : true
+              loop       : true,
+              loader     : true
             });
 
           });

@@ -9,7 +9,8 @@
       speed         : 1500,
       itemMargin    : 10,
       loop          : false,
-      keyboard      : false
+      keyboard      : false,
+      loader        : false
     }, options );
 
 
@@ -28,6 +29,8 @@
         currentCont = container.find('.image-current'), //this container will display de actual image index
         totalCont = container.find('.image-total'),     //this container will display de total images
         realTotalCourseWidth = 0;
+
+    startLoader();
     
     if (nowready==false) {
       var elementtoload = carouselListCont.find('li > *'),
@@ -38,6 +41,7 @@
         if (counter==totalItems) {
           nowready = true;
           initialize(width,height,totalWidth);
+          endLoader();
         }
       }
       elementtoload.each(function(){
@@ -58,6 +62,18 @@
 
         
       });
+    }
+
+    function startLoader(el) {
+      if (carouselViewport.find('.loader-overlay') && settings.loader==true) {
+        carouselViewport.find('.loader-overlay').show();
+      }
+    }
+
+    function endLoader() {
+      if (carouselViewport.find('.loader-overlay') && settings.loader==true) {
+        carouselViewport.find('.loader-overlay').hide();
+      }
     }
 
     function initialize(elwidth,elheight,totalWidth) {
