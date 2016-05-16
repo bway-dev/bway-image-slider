@@ -1,6 +1,8 @@
-# bway-image-slider v1.0.5
+# bway-image-slider v1.0.6
 Very easy to use and fully responsive jQuery image slider plugin with option for Horizontal or Vertical axis and infinite loop.
 Includes also touch events, and current/total information.
+
+v1.0.6 - Loader controlable. Since you have `.loader-overlay` in your container just use `loader : true`. (we are using some css loaders from the awesome [SpinKit project](http://tobiasahlin.com/spinkit)
 
 v1.0.5 - Different objects size allowed in 'x' axis.
 
@@ -44,11 +46,30 @@ If you want touch events, please load also hammer.js before this plugin, as you 
 
 #### Place your HTML markup
 
-with `<img>` elements 
+with `<img>` elements (in this example we are including a loader)
+for this and other loader code visit the [SpinKit project](http://tobiasahlin.com/spinkit)
 
 ```
 <div id="your-gallery">
   <div class="viewport">
+    <!-- LOADER (optional) -->
+    <div class="loader-overlay">
+      <div class="sk-circle">
+        <div class="sk-circle1 sk-child"></div>
+        <div class="sk-circle2 sk-child"></div>
+        <div class="sk-circle3 sk-child"></div>
+        <div class="sk-circle4 sk-child"></div>
+        <div class="sk-circle5 sk-child"></div>
+        <div class="sk-circle6 sk-child"></div>
+        <div class="sk-circle7 sk-child"></div>
+        <div class="sk-circle8 sk-child"></div>
+        <div class="sk-circle9 sk-child"></div>
+        <div class="sk-circle10 sk-child"></div>
+        <div class="sk-circle11 sk-child"></div>
+        <div class="sk-circle12 sk-child"></div>
+      </div>
+    </div>
+    <!-- end of LOADER (optional) -->
     <input type="button" class="buttons prev" value="<">
     <ul class="overview">
       <li><img src="path-to-your-image"></li>
@@ -61,7 +82,7 @@ with `<img>` elements
 </div>
 ```
 
-or if you prefer `<a>` elements 
+or if you prefer `<a>` elements (in this example we are NOT including a loader)
 
 ```
 <div id="your-gallery">
@@ -95,7 +116,8 @@ $('#your-gallery').bwayImageSlider({
   itemMargin : 14,   // margin between items, default 10
   speed      : 500,  // miliseconds, default 1500
   loop       : true,
-  keyboard   : true
+  keyboard   : true,
+  loader     : true
 });
 ```
 
@@ -196,6 +218,86 @@ In our [example page](http://bway.pt/opensource/plugins/js/bway-image-slider) yo
 }
 .examples .buttons:active, .examples .buttons:focus { 
   outline: none
+}
+
+
+/* LOADER */
+.loader-overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(255,255,255,.85);
+  z-index: 10;
+  display: none;
+}
+
+/* one of the options of SpinKit project (you may use anyone from this library, or any other loader you want) */
+.sk-cube-grid {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  top: 50%;
+  left: 50%;
+  margin-top: -20px;
+  margin-left: -20px;
+}
+
+.sk-cube-grid .sk-cube {
+  width: 33%;
+  height: 33%;
+  background-color: #FFF;
+  float: left;
+  -webkit-animation: sk-cubeGridScaleDelay 1.3s infinite ease-in-out;
+          animation: sk-cubeGridScaleDelay 1.3s infinite ease-in-out; 
+}
+.sk-cube-grid .sk-cube1 {
+  -webkit-animation-delay: 0.2s;
+          animation-delay: 0.2s; }
+.sk-cube-grid .sk-cube2 {
+  -webkit-animation-delay: 0.3s;
+          animation-delay: 0.3s; }
+.sk-cube-grid .sk-cube3 {
+  -webkit-animation-delay: 0.4s;
+          animation-delay: 0.4s; }
+.sk-cube-grid .sk-cube4 {
+  -webkit-animation-delay: 0.1s;
+          animation-delay: 0.1s; }
+.sk-cube-grid .sk-cube5 {
+  -webkit-animation-delay: 0.2s;
+          animation-delay: 0.2s; }
+.sk-cube-grid .sk-cube6 {
+  -webkit-animation-delay: 0.3s;
+          animation-delay: 0.3s; }
+.sk-cube-grid .sk-cube7 {
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s; }
+.sk-cube-grid .sk-cube8 {
+  -webkit-animation-delay: 0.1s;
+          animation-delay: 0.1s; }
+.sk-cube-grid .sk-cube9 {
+  -webkit-animation-delay: 0.2s;
+          animation-delay: 0.2s; }
+
+@-webkit-keyframes sk-cubeGridScaleDelay {
+  0%, 70%, 100% {
+    -webkit-transform: scale3D(1, 1, 1);
+            transform: scale3D(1, 1, 1);
+  } 35% {
+    -webkit-transform: scale3D(0, 0, 1);
+            transform: scale3D(0, 0, 1); 
+  }
+}
+
+@keyframes sk-cubeGridScaleDelay {
+  0%, 70%, 100% {
+    -webkit-transform: scale3D(1, 1, 1);
+            transform: scale3D(1, 1, 1);
+  } 35% {
+    -webkit-transform: scale3D(0, 0, 1);
+            transform: scale3D(0, 0, 1);
+  } 
 }
 ```
 

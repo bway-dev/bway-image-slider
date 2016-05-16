@@ -31,7 +31,7 @@
         <h1>Bway Image Slider v1.0.6<span>&nbsp;&nbsp;[jQuery plugin]</span></h1>
         <h4>Allows vertical or horizontal axis usage.</h4>
         <p>Very easy to use and responsive jQuery image slider plugin with option for Horizontal or Vertical axis and infinite loop.<br />Includes also touch events, and current/total information.</p>
-        <p><strong>v1.0.6</strong> Loader controlable, since you have <code>.loader-overlay</code> in your container. (we are using some css loaders from this awsome <a href="http://tobiasahlin.com/spinkit/" target="_blank">project)</a></p>
+        <p><strong>v1.0.6</strong> Loader controlable. Since you have <code>.loader-overlay</code> in your container just use <code>loader : true</code>. (we are using some css loaders from the awesome <a href="http://tobiasahlin.com/spinkit/" target="_blank">SpinKit project</a>)</p>
         <p><strong>v1.0.5</strong> Different objects size allowed in 'x' axis.</p>
         <p><strong>v1.0.4</strong> Allows keyboard controls. <code>keyboard : true</code></p>
         <p><strong>v1.0.3</strong> Includes image counter. Just needs to include <code>.image-current</code> and <code>.image-total</code> classes.</p>
@@ -53,29 +53,32 @@
         <br />
 
         <h4>Place your HTML markup</h4>
-        with <code>&lt;img&gt;</code> elements (in this example we are including a loader)
+        with <code>&lt;img&gt;</code> elements (in this example we are including a loader)<br />
+        for this and other loader code visit this <a href="http://tobiasahlin.com/spinkit/" target="_blank">project</a>
         <br />
         <br />
         <pre>&lt;div id="your-gallery"&gt;
   &lt;div class="viewport"&gt;
-  &lt;!-- LOADER (optional) --&gt;
-  &lt;div class="loader-overlay"&gt;
-    &lt;div class="sk-circle"&gt;
-      &lt;div class="sk-circle1 sk-child"&gt;&lt;/div&gt;
-      &lt;div class="sk-circle2 sk-child"&gt;&lt;/div&gt;
-      &lt;div class="sk-circle3 sk-child"&gt;&lt;/div&gt;
-      &lt;div class="sk-circle4 sk-child"&gt;&lt;/div&gt;
-      &lt;div class="sk-circle5 sk-child"&gt;&lt;/div&gt;
-      &lt;div class="sk-circle6 sk-child"&gt;&lt;/div&gt;
-      &lt;div class="sk-circle7 sk-child"&gt;&lt;/div&gt;
-      &lt;div class="sk-circle8 sk-child"&gt;&lt;/div&gt;
-      &lt;div class="sk-circle9 sk-child"&gt;&lt;/div&gt;
-      &lt;div class="sk-circle10 sk-child"&gt;&lt;/div&gt;
-      &lt;div class="sk-circle11 sk-child"&gt;&lt;/div&gt;
-      &lt;div class="sk-circle12 sk-child"&gt;&lt;/div&gt;
+
+    &lt;!-- LOADER (optional) --&gt;
+    &lt;div class="loader-overlay"&gt;
+      &lt;div class="sk-circle"&gt;
+        &lt;div class="sk-circle1 sk-child"&gt;&lt;/div&gt;
+        &lt;div class="sk-circle2 sk-child"&gt;&lt;/div&gt;
+        &lt;div class="sk-circle3 sk-child"&gt;&lt;/div&gt;
+        &lt;div class="sk-circle4 sk-child"&gt;&lt;/div&gt;
+        &lt;div class="sk-circle5 sk-child"&gt;&lt;/div&gt;
+        &lt;div class="sk-circle6 sk-child"&gt;&lt;/div&gt;
+        &lt;div class="sk-circle7 sk-child"&gt;&lt;/div&gt;
+        &lt;div class="sk-circle8 sk-child"&gt;&lt;/div&gt;
+        &lt;div class="sk-circle9 sk-child"&gt;&lt;/div&gt;
+        &lt;div class="sk-circle10 sk-child"&gt;&lt;/div&gt;
+        &lt;div class="sk-circle11 sk-child"&gt;&lt;/div&gt;
+        &lt;div class="sk-circle12 sk-child"&gt;&lt;/div&gt;
+      &lt;/div&gt;
     &lt;/div&gt;
-  &lt;/div&gt;
-  &lt;!-- end of LOADER (optional) --&gt;
+    &lt;!-- end of LOADER (optional) --&gt;
+
     &lt;input type="button" class="buttons prev" value="&lt;"&gt;
     &lt;ul class="overview"&gt;
       &lt;li&gt;&lt;img src="path-to-your-image"&gt;&lt;/li&gt;
@@ -359,8 +362,7 @@
 
         <script src="js/vendor/bootstrap.min.js"></script>
         <script src="//cdn.jsdelivr.net/g/hammerjs@2.0.4,jquery.hammerjs@2.0.0"></script>
-<!--         <script src="js/jquery.bway.imageslider.min.js"></script> -->
-        <script src="js/jquery.bway.imageslider.js"></script>
+        <script src="js/jquery.bway.imageslider.min.js"></script>
         
         <script type="text/javascript">
           $(document).on('ready', function(){
